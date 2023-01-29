@@ -44,7 +44,7 @@ $whQuestions = $controller->readAllWhQuestion();
         <?php else : ?>
             <tr>
                 <td colspan="5" class="text-center text-danger"><strong>
-                        <h2>NO PRODUCTS</h2>
+                        <h2>NO WH QUESTION</h2>
                     </strong></td>
             </tr>
         <?php endif; ?>

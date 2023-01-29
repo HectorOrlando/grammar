@@ -42,4 +42,25 @@ class MysqlGrammarRepository implements WhQuestionRepository
         }
         return $whQuestions;
     }
+
+    public function addWhQuestion(): void
+    {
+        // TRUNCATE TABLE wh_question;
+        $add = $_GET['add'];
+        if ($add) {
+            /* Leer y recorrer el fichero */
+            $csv = file('/xampp/htdocs/grammar/src/Infrastructure/Connections/Mysql/wh_question.csv');
+            foreach ($csv as $value) {
+                $line = str_getcsv($value, ",");
+                $success = (int)$line[3];
+                $failures = (int)$line[4];
+                $sql = "INSERT INTO wh_question (question_type, name_in_english, name_in_spanish, success, failures, average) 
+                        VALUES ('$line[0]','$line[1]','$line[2]',$success,$failures,'$line[5]')";
+                // $this->PDO->query($sql);
+                // TODO: LO COMENTO PARA NO VOLVER A MACHACAR LA TABLA.
+            }
+        }
+        // BORRAR ESTO SI QUIERO LLENAR LA TABLA
+        var_dump("Descomentar codigo para poder actualizar la tabla... en el archivo: MysqlGrammarRepository <hr>");
+    }
 }

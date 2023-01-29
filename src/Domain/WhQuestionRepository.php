@@ -9,4 +9,5 @@ use Domain\WhQuestion;
 interface WhQuestionRepository
 {
     public function getAllWhQuestion(): array;
+    public function addWhQuestion(): void;
 }
