@@ -30,8 +30,8 @@
                                 WH QUESTION
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="../../../../grammar/src/view/whQuestion/index.php">Show WH Question</a></li>
-                                <li><a class="dropdown-item" href="../../../../grammar/src/view/whQuestion/what.php">WHAT Question</a></li>
+                                <li><a class="dropdown-item" href="../../../../grammar/src/view/wh-question/index.php">Show WH Question</a></li>
+                                <li><a class="dropdown-item" href="../../../../grammar/src/view/wh-question/select.php">Select WH Question</a></li>
                             </ul>
                         </li>
                     </ul>

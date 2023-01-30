@@ -6,10 +6,12 @@ namespace Infrastructure\Controllers;
 
 use Infrastructure\Repositories\MysqlGrammarRepository;
 use Application\ReadAllWhQuestion;
+use Application\ReadWhQuestionBySelect;
 use Application\AddWhQuestion;
 
 require_once("/xampp/htdocs/grammar/src/Infrastructure/Repositories/MysqlGrammarRepository.php");
 require_once("/xampp/htdocs/grammar/src/Application/ReadAllWhQuestion.php");
+require_once("/xampp/htdocs/grammar/src/Application/ReadWhQuestionBySelect.php");
 require_once("/xampp/htdocs/grammar/src/Application/AddWhQuestion.php");
 
 class WqQuestionController
@@ -24,6 +26,13 @@ class WqQuestionController
     {
         $readService = new ReadAllWhQuestion($this->whQuestionRepository);
         return $readService->getAllWhQuestion();
+    }
+
+    public function readWhQuestionBySelect()
+    {
+        $selectionType = $_POST["select"];
+        $readService = new ReadWhQuestionBySelect($this->whQuestionRepository);
+        return $readService->getWhQuestionBySelect($selectionType);
     }
 
     public function addWhQuestions()

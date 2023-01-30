@@ -6,7 +6,7 @@ require_once("/xampp/htdocs/grammar/src/view/layouts/header.php");
 ?>
 
 <div class="mb-3">
-    <a class="btn btn-primary" href="../view/whQuestion/add.php">ADD NEW QUESTION</a>
+    <a class="btn btn-primary" href="../view/wh-question/add.php">ADD NEW QUESTION</a>
 </div>
 
 <?php

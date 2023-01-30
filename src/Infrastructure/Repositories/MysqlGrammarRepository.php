@@ -43,6 +43,28 @@ class MysqlGrammarRepository implements WhQuestionRepository
         return $whQuestions;
     }
 
+    public function getWhQuestionBySelect(string $select): array
+    {
+        $sql = "SELECT * FROM wh_question WHERE question_type = :select";
+        $stmt = $this->PDO->prepare($sql);
+        $stmt->bindParam(":select", $select);
+        $stmt->execute();
+        $whQuestionList = $stmt->fetchAll();
+        $whQuestions = [];
+        foreach ($whQuestionList as $whQuestion) {
+            $whQuestions[] = new WhQuestion(
+                $whQuestion['id'],
+                $whQuestion['question_type'],
+                $whQuestion['name_in_english'],
+                $whQuestion['name_in_spanish'],
+                $whQuestion['success'],
+                $whQuestion['failures'],
+                $whQuestion['average']
+            );
+        }
+        return $whQuestions;
+    }
+
     public function addWhQuestion(): void
     {
         // TRUNCATE TABLE wh_question;
