@@ -12,10 +12,11 @@ $whQuestions = $controller->readWhQuestionBySelect();
 $size = count($whQuestions);
 $whQuestion = $whQuestions[rand(0, $size - 1)];
 $ruleTipe = '';
+$selectionType = $_POST["select"];
 if ($whQuestion->getQuestionType() == "To Be") {
-    $ruleTipe = 'To Be + suj + compl';
+    $ruleTipe = $selectionType .' + subject + complement';
 } else {
-    $ruleTipe = 'WH + Aux + suj + ver(infi) + compl';
+    $ruleTipe = $selectionType .' + To Be + subject + complement';
 }
 
 ?>
