@@ -32,6 +32,7 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="../../../../grammar/src/view/wh-question/index.php">Show WH Question</a></li>
                                 <li><a class="dropdown-item" href="../../../../grammar/src/view/wh-question/select.php">Select WH Question</a></li>
+                                <li><a class="dropdown-item" href="../../../../grammar/src/view/wh-question/common-questions.php">Select Common Questions</a></li>
                             </ul>
                         </li>
                     </ul>

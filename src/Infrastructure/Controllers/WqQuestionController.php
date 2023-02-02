@@ -8,11 +8,14 @@ use Infrastructure\Repositories\MysqlGrammarRepository;
 use Application\ReadAllWhQuestion;
 use Application\ReadWhQuestionBySelect;
 use Application\AddWhQuestion;
+use Application\AddCommonQuestion;
 
 require_once("/xampp/htdocs/grammar/src/Infrastructure/Repositories/MysqlGrammarRepository.php");
 require_once("/xampp/htdocs/grammar/src/Application/ReadAllWhQuestion.php");
 require_once("/xampp/htdocs/grammar/src/Application/ReadWhQuestionBySelect.php");
 require_once("/xampp/htdocs/grammar/src/Application/AddWhQuestion.php");
+require_once("/xampp/htdocs/grammar/src/Application/AddCommonQuestion.php");
+
 
 class WqQuestionController
 {
@@ -39,5 +42,11 @@ class WqQuestionController
     {
         $readService = new AddWhQuestion($this->whQuestionRepository);
         return $readService->addWhQuestion();
+    }
+
+    public function addCommonQuestions()
+    {
+        $readService = new AddCommonQuestion($this->whQuestionRepository);
+        return $readService->AddCommonQuestion();
     }
 }

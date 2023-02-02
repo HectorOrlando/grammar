@@ -33,7 +33,8 @@ if ($whQuestion->getQuestionType() == "To Be") {
     </div>
     <div class="mb-3">
         <label for="exampleInputEnglish" class="form-label">English Phrase</label>
-        <input class="form-control form-control-sm" type="text" placeholder="<?= $whQuestion->getNameInEnglish() ?>" aria-label=".form-control-sm example">
+        <!-- <input class="form-control form-control-sm" type="text" placeholder="<?= $whQuestion->getNameInEnglish() ?>" aria-label=".form-control-sm example"> -->
+        <input class="form-control form-control-sm" type="text" placeholder="Add Question" aria-label=".form-control-sm example">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

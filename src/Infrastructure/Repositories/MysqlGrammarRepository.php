@@ -85,4 +85,23 @@ class MysqlGrammarRepository implements WhQuestionRepository
         // BORRAR ESTO SI QUIERO LLENAR LA TABLA
         var_dump("Descomentar codigo para poder actualizar la tabla... en el archivo: MysqlGrammarRepository <hr>");
     }
+
+    public function addCommonQuestion(): void
+    {
+        // TRUNCATE TABLE common_questions;
+        $add = $_GET['add'];
+        if ($add) {
+            /* Leer y recorrer el fichero */
+            $csv = file('/xampp/htdocs/grammar/src/Infrastructure/Connections/Mysql/common-questions.csv');
+            foreach ($csv as $value) {
+                $line = str_getcsv($value, ",");
+                $sql = "INSERT INTO common_questions (common_questions_in_spanish, common_questions, response) 
+                        VALUES ('$line[0]','$line[1]','$line[2]')";
+                // $this->PDO->query($sql);
+                // TODO: LO COMENTO PARA NO VOLVER A MACHACAR LA TABLA.
+            }
+        }
+        // BORRAR ESTO SI QUIERO LLENAR LA TABLA
+        var_dump("Descomentar codigo para poder actualizar la tabla... en el archivo: MysqlGrammarRepository <hr>");
+    }
 }
