@@ -8,16 +8,17 @@ use Domain\WhQuestionRepository;
 
 require_once("/xampp/htdocs/grammar/src/Domain/WhQuestionRepository.php");
 
-class AddWhQuestion
+class ReadAllCommonQuestion
 {
-    private $whQuestionRepository;
+    private $commonQuestionRepository;
     
     public function __construct(WhQuestionRepository $whQuestionRepository)
     {
-        $this->whQuestionRepository = $whQuestionRepository;
+        $this->commonQuestionRepository = $whQuestionRepository;
     }
+
     public function run()
     {
-        return $this->whQuestionRepository->addWhQuestion();
+        return $this->commonQuestionRepository->getAllCommonQuestion();
     }
 }

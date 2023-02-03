@@ -12,4 +12,5 @@ interface WhQuestionRepository
     public function getWhQuestionBySelect(string $select): array;
     public function addWhQuestion(): void;
     public function addCommonQuestion(): void;
+    public function getAllCommonQuestion(): array;
 }

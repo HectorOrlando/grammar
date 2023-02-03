@@ -17,7 +17,7 @@ class ReadAllWhQuestion
         $this->whQuestionRepository = $whQuestionRepository;
     }
 
-    public function getAllWhQuestion()
+    public function run()
     {
         return $this->whQuestionRepository->getAllWhQuestion();
     }

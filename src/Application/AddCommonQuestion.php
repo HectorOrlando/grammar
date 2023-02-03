@@ -16,7 +16,7 @@ class AddCommonQuestion
     {
         $this->commonQuestionRepository = $whQuestionRepository;
     }
-    public function AddCommonQuestion()
+    public function run()
     {
         return $this->commonQuestionRepository->addCommonQuestion();
     }

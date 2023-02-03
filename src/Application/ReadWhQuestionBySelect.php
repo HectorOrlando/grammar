@@ -17,7 +17,7 @@ class ReadWhQuestionBySelect
         $this->whQuestionRepository = $whQuestionRepository;
     }
 
-    public function getWhQuestionBySelect(string $select)
+    public function run(string $select)
     {
         return $this->whQuestionRepository->getWhQuestionBySelect($select);
     }

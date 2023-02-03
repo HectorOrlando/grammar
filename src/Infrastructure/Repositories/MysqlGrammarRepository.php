@@ -7,10 +7,12 @@ namespace Infrastructure\Repositories;
 use Infrastructure\Connections\Mysql\Connection;
 use Domain\WhQuestion;
 use Domain\WhQuestionRepository;
+use Domain\CommonQuestion;
 
 require_once("/xampp/htdocs/grammar/src/Infrastructure/Connections/Mysql/Connection.php");
 require_once("/xampp/htdocs/grammar/src/Domain/WhQuestion.php");
 require_once("/xampp/htdocs/grammar/src/Domain/WhQuestionRepository.php");
+require_once("/xampp/htdocs/grammar/src/Domain/CommonQuestion.php");
 
 class MysqlGrammarRepository implements WhQuestionRepository
 {
@@ -103,5 +105,23 @@ class MysqlGrammarRepository implements WhQuestionRepository
         }
         // BORRAR ESTO SI QUIERO LLENAR LA TABLA
         var_dump("Descomentar codigo para poder actualizar la tabla... en el archivo: MysqlGrammarRepository <hr>");
+    }
+
+    public function getAllCommonQuestion(): array
+    {
+        $sql = "SELECT * FROM common_questions";
+        $stm = $this->PDO->query($sql);
+        $commonQuestionList = $stm->fetchAll();
+
+        $whQuestions = [];
+        foreach ($commonQuestionList as $commonQuestion) {
+            $whQuestions[] = new CommonQuestion(
+                $commonQuestion['id'],
+                $commonQuestion['common_questions_in_spanish'],
+                $commonQuestion['common_questions'],
+                $commonQuestion['response']
+            );
+        }
+        return $whQuestions;
     }
 }
